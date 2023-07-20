@@ -1,0 +1,28 @@
+@use 'sass:math';
+
+/*! purgecss start ignore */
+@import 'vendors/modern-normalize';
+@import 'vendors/intTelInput';
+/*! purgecss end ignore */
+
+@import 'utils/mixins';
+@import 'vendors/tailwind';
+@import 'vendors/slick';
+@import 'vendors/slick-theme';
+
+@import 'components/input';
+@import 'components/form';
+@import 'components/modal';
+// @import 'components/mobile-menu';
+
+@import 'sections/header';
+@import 'sections/withChild';
+@import 'sections/onlineClasses';
+@import 'sections/scratch';
+@import 'sections/programming';
+@import 'sections/results';
+@import 'sections/project';
+@import 'sections/feedback';
+@import 'sections/whyChooseUs';
+@import 'sections/trial';
+@import 'sections/howWeLearn';

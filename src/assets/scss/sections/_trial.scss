@@ -1,0 +1,51 @@
+.trial {
+  background-repeat: repeat-x;
+  background-position: top 10px center;
+  background-image: url('../images/trial/bg-mobile.svg');
+  background-size: 320px auto;
+
+  @include mq(tablet) {
+    background-repeat: repeat-x;
+    background-image: url('../images/trial/bg-tablet.svg');
+    background-size: 768px auto;
+    background-position: bottom center;
+  }
+
+  @include mq(desktop) {
+    background-repeat: no-repeat, repeat-x;
+    background-image: url('../images/trial/boy-desktop.png'), url('../images/trial/bg-desktop.svg');
+    background-size: 400px auto, 1600px auto;
+    background-position: bottom right calc(50% - 532px), bottom center;
+
+    @include mq(retina) {
+      background-image: url('../images/trial/boy-desktop@2x.png'),
+        url('../images/trial/bg-desktop.svg');
+    }
+    @supports (
+      background-image: url('../images/trial/boy-desktop.webp'),
+      url('../images/trial/bg-desktop.svg')
+    ) {
+      background-image: url('../images/trial/boy-desktop.webp'),
+        url('../images/trial/bg-desktop.svg');
+
+      @include mq(retina) {
+        background-image: url('../images/trial/boy-desktop@2x.webp'),
+          url('../images/trial/bg-desktop.svg');
+      }
+    }
+  }
+}
+
+.trial-item {
+  &::before {
+    content: '';
+    background-image: url('../images/check.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 68px;
+    height: 68px;
+    display: block;
+    margin-bottom: 14px;
+  }
+}

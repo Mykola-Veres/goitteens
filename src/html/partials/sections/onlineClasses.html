@@ -1,0 +1,97 @@
+{% set section = onlineClasses %}
+<section class="{{section.id}} section">
+  <div class="container flex flex-col items-center justify-center">
+    <h2 class="section-title mb-8 text-center xl:w-[870px]">{{section.title}}</h2>
+    <div class="xl:w-[970px] mdOnly:relative">
+      <ul class="flex flex-col justify-center gap-[32px] md:flex-row md:gap-[30px]">
+        <li
+          class="rounded-xl bg-second px-[25px] pb-6 pt-6 shadow-grey md:w-1/2 xl:pb-[52px] xl:pt-8"
+        >
+          <h3 class="section-subtitle mb-3 text-center !text-[17px] text-accent xl:mb-6">
+            {{section.hardSkills.title}}
+          </h3>
+          <ul class="flex flex-col gap-3">
+            {% for item in section.hardSkills.list %}
+            <li class="point gap-3">
+              <p class="paragraph !leading-[1.3] text-black-light">{{item.text}}</p>
+            </li>
+            {% endfor %}
+          </ul>
+        </li>
+
+        <li
+          class="rounded-xl bg-second px-[25px] pt-6 shadow-grey md:w-1/2 xl:pt-8 mdOnly:h-[575px]"
+        >
+          <h3 class="section-subtitle mb-3 text-center !text-[17px] text-accent xl:mb-6">
+            {{section.softSkills.title}}
+          </h3>
+          <ul class="flex flex-col gap-3">
+            {% for item in section.softSkills.list %}
+            <li class="point gap-3">
+              <p class="paragraph !leading-[1.3] text-black-light">{{item.text}}</p>
+            </li>
+            {% endfor %}
+          </ul>
+
+          <picture class="imageBoy">
+            <source
+              srcset="
+                ./assets/images/onlineClasses/{{section.image.link}}-desk.webp    1x,
+                ./assets/images/onlineClasses/{{section.image.link}}-desk@2x.webp 2x
+              "
+              media="(min-width: 1280px)"
+              type="image/webp"
+            />
+            <source
+              srcset="
+                ./assets/images/onlineClasses/{{section.image.link}}-tab.webp    1x,
+                ./assets/images/onlineClasses/{{section.image.link}}-tab@2x.webp 2x
+              "
+              media="(min-width: 768px)"
+              type="image/webp"
+            />
+            <source
+              srcset="
+                ./assets/images/onlineClasses/{{section.image.link}}-mob.webp    1x,
+                ./assets/images/onlineClasses/{{section.image.link}}-mob@2x.webp 2x
+              "
+              media="(max-width: 767px)"
+              type="image/webp"
+            />
+            <source
+              srcset="
+                ./assets/images/onlineClasses/{{section.image.link}}-desk.png    1x,
+                ./assets/images/onlineClasses/{{section.image.link}}-desk@2x.png 2x
+              "
+              media="(min-width: 1280px)"
+              type="image/png"
+            />
+            <source
+              srcset="
+                ./assets/images/onlineClasses/{{section.image.link}}-tab.png    1x,
+                ./assets/images/onlineClasses/{{section.image.link}}-tab@2x.png 2x
+              "
+              media="(min-width: 768px)"
+              type="image/png"
+            />
+
+            <img
+              class="imageBoy ml-auto xl:block"
+              src="./assets/images/onlineClasses/{{section.image.link}}-mob.png"
+              srcset="./assets/images/onlineClasses/{{section.image.link}}-mob@2x.png 2x"
+              alt="{{section.image.alt}}"
+              height="168"
+              width="125"
+              loading="lazy"
+            />
+          </picture>
+        </li>
+      </ul>
+      <div
+        class="bottom-0 right-8 w-[228px] sm:w-[300px] xl:mt-[25px] xl:w-[450px] smOnly:right-5 smOnly:mt-8 mdOnly:absolute mdOnly:w-[307px]"
+      >
+        <p class="paragraph clockTab !leading-[1.3] text-black-dark">{{section.description}}</p>
+      </div>
+    </div>
+  </div>
+</section>

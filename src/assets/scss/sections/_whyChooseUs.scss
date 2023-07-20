@@ -1,0 +1,61 @@
+.cardChoose {
+  transform: scale(0);
+  &::before {
+    left: 30px;
+    display: block;
+    content: '';
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 75px;
+    height: 78px;
+  }
+
+  &:first-child::before {
+    background-image: url('../images/triangles1.svg');
+  }
+
+  &:nth-child(2)::before {
+    background-image: url('../images/triangles2.svg');
+    width: 65px;
+  }
+  &:nth-child(3)::before {
+    background-image: url('../images/triangles4.svg');
+    width: 85px;
+  }
+  &:nth-child(4)::before {
+    background-image: url('../images/triangles3.svg');
+  }
+}
+
+.animatedCard {
+  animation: animate75 1700ms forwards;
+
+  &:first-child {
+    animation-delay: 100ms;
+  }
+
+  &:nth-child(2) {
+    animation-delay: 700ms;
+  }
+
+  &:nth-child(3) {
+    animation-delay: 1300ms;
+  }
+
+  &:nth-child(4) {
+    animation-delay: 1900ms;
+  }
+}
+
+@keyframes animate75 {
+  0% {
+    transform: scale(0);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

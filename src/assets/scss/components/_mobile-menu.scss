@@ -1,0 +1,40 @@
+// @include mq(notDesktop) {
+//   .nav {
+//     @apply hidden;
+//   }
+
+//   .mobile-menu-btn {
+//     @apply h-6 w-6 bg-inherit p-0;
+
+//     &-icon {
+//       @apply stroke-black duration-300 hover:stroke-accent focus:stroke-accent;
+//     }
+//   }
+
+//   .mobile-menu {
+//     @apply pointer-events-none invisible fixed inset-x-0 top-0 z-50 h-screen overflow-y-scroll bg-white px-6 pt-2 text-center opacity-0 duration-300;
+
+//     &.is-open {
+//       @apply pointer-events-auto visible opacity-100;
+//     }
+
+//     &.is-open .nav {
+//       @apply block;
+//     }
+
+//     &-close {
+//       @apply absolute right-6 top-2 flex h-6 w-6 items-center justify-center bg-inherit stroke-black p-0 duration-300 hover:stroke-accent focus:stroke-accent;
+//     }
+
+//     & .logo {
+//       @apply mb-6 max-w-max border border-black bg-black;
+//     }
+//   }
+// }
+
+// @include mq(desktop) {
+//   .mobile-menu-btn,
+//   .mobile-menu {
+//     @apply hidden;
+//   }
+// }

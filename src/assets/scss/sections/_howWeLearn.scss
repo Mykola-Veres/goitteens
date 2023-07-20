@@ -1,0 +1,174 @@
+.cardPercent {
+  position: relative;
+  &::before {
+    position: absolute;
+    display: block;
+    content: '';
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 79px;
+    height: 87px;
+  }
+
+  &:first-child::before {
+    background-image: url('../images/howWeLearn/ten.svg');
+    width: 79px;
+    height: 88px;
+    left: 0%;
+    top: 0%;
+  }
+
+  &:nth-child(2)::before {
+    background-image: url('../images/howWeLearn/seventy.svg');
+    width: 76px;
+    height: 101px;
+    right: 0%;
+    top: 0%;
+  }
+  &:nth-child(3)::before {
+    background-image: url('../images/howWeLearn/twenty.svg');
+    width: 82px;
+    height: 84px;
+    right: 0%;
+    top: 0%;
+  }
+}
+
+.cardPercentText {
+  font-size: 64px;
+  font-weight: 700;
+  text-transform: uppercase;
+  &:first-child {
+    color: #f55853;
+  }
+  &:nth-child(2) {
+    color: #2cbc67;
+  }
+  &:nth-child(3) {
+    color: #fed847;
+  }
+}
+
+.cardPercentLine {
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: hidden;
+  &::before {
+    position: absolute;
+    background-image: url('../images/howWeLearn/left.svg');
+    width: 130px;
+    height: 56px;
+    left: 24%;
+    top: 10%;
+    content: '';
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: hidden;
+    @apply hidden xl:inline-block;
+  }
+  &::after {
+    position: absolute;
+    background-image: url('../images/howWeLearn/right.svg');
+    width: 130px;
+    height: 56px;
+    right: 28%;
+    top: 10%;
+    content: '';
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: hidden;
+    @apply hidden xl:inline-block;
+  }
+}
+
+.line {
+  &::before {
+    background-image: url('../images/howWeLearn/line.svg');
+    width: 62px;
+    height: 2px;
+    content: '';
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-right: 16px;
+  }
+}
+
+.learn-check {
+  &::before {
+    content: '';
+    background-image: url('../images/check.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 68px;
+    height: 68px;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+.cardCompany {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0);
+  &::before {
+    content: '';
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  &:first-child::before {
+    background-image: url('../images/howWeLearn/microsoft.svg');
+    width: 120px;
+    height: 26px;
+  }
+  &:nth-child(2)::before {
+    background-image: url('../images/howWeLearn/google.svg');
+    width: 108px;
+    height: 37px;
+  }
+  &:nth-child(3)::before {
+    background-image: url('../images/howWeLearn/apple.svg');
+    width: 36px;
+    height: 44px;
+  }
+  &:nth-child(4)::before {
+    background-image: url('../images/howWeLearn/amazone.svg');
+    width: 100px;
+    height: 30px;
+  }
+}
+
+.animatedCard {
+  animation: animate75 1700ms forwards;
+
+  &:first-child {
+    animation-delay: 100ms;
+  }
+
+  &:nth-child(2) {
+    animation-delay: 700ms;
+  }
+
+  &:nth-child(3) {
+    animation-delay: 1300ms;
+  }
+
+  &:nth-child(4) {
+    animation-delay: 1900ms;
+  }
+}
+
+@keyframes animate75 {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}

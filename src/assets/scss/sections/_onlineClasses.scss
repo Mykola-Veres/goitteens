@@ -1,0 +1,58 @@
+.point {
+  display: flex;
+  position: relative;
+  &::before {
+    display: inline-block;
+    content: '';
+    background-repeat: no-repeat;
+    margin-top: 8px;
+    background-color: black;
+    padding-right: 5px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+  }
+}
+
+.clock {
+  position: relative;
+  @apply hidden xl:inline-block;
+  &::before {
+    display: inline-block;
+    content: '';
+    background-image: url('../images/onlineClasses/clock.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: 5px;
+    width: 47px;
+    height: 47px;
+  }
+}
+
+.clockTab {
+  position: relative;
+  &::before {
+    content: '';
+    background-image: url('../images/onlineClasses/clock.svg');
+    width: 47px;
+    height: 47px;
+    position: absolute;
+    top: 10px;
+    right: -50px;
+    @apply md:right-[-20px] md:top-[-30px] xl:hidden;
+  }
+}
+
+.imageBoy {
+  @include mq(tablet) {
+    width: 147px;
+    height: 197px;
+    margin-left: auto;
+  }
+
+  @include mq(desktop) {
+    width: 205px;
+    height: 275px;
+    margin-left: 175px;
+  }
+}

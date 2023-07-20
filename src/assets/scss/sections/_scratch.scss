@@ -1,0 +1,66 @@
+.scratch-title {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -15%;
+    right: 0;
+    @include mq(tablet) {
+      bottom: -65%;
+    }
+    @include mq(desktop) {
+      right: 200px;
+    }
+    width: 37px;
+    height: 37px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-image: url('../images/compas.svg');
+  }
+}
+.scratch-picture {
+  position: relative;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 70px;
+    height: 64px;
+    bottom: -15px;
+    right: -15px;
+    z-index: 20;
+    background-image: url('../images/triangles2.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 107px;
+    height: 107px;
+    top: -55px;
+    left: -50px;
+    z-index: 20;
+    background-image: url('../images/mortarboard.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+}
+
+.scratch-grid {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1;
+
+  @include mq(desktop) {
+    justify-items: start;
+    column-gap: 130px;
+    grid-template-columns: 55% auto;
+  }
+}

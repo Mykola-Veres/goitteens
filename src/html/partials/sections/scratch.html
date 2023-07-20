@@ -1,0 +1,73 @@
+{% set section = scratch %}
+<section class="{{section.id}} section">
+  <div class="container">
+    <h2 class="section-title scratch-title mb-8 md:mb-4 xl:w-[870px]">{{section.title}}</h2>
+    <div class="scratch-grid">
+      <div>
+        <p class="paragraph mb-4 md:mb-[27px] xl:mb-10">{{section.description.text1}}</p>
+        <p class="paragraph mb-4 !font-medium !text-black-dark md:mb-6">
+          {{section.description.text2}}
+        </p>
+        <p class="paragraph mb-8 xl:mb-[52px]">{{section.description.text3}}</p>
+        <button
+          data-modal-open
+          class="btn scaled-hover mb-[44px] w-full md:w-[420px] xl:mb-0"
+          type="button"
+        >
+          {{section.btn}}
+        </button>
+      </div>
+      <picture class="scratch-picture self-end">
+        <source
+          srcset="
+            ./assets/images/scratch/{{section.image.link}}-desktop.webp    1x,
+            ./assets/images/scratch/{{section.image.link}}-desktop@2x.webp 2x
+          "
+          media="(min-width: 1280px)"
+          type="image/webp"
+        />
+        <source
+          srcset="
+            ./assets/images/scratch/{{section.image.link}}-tablet.webp    1x,
+            ./assets/images/scratch/{{section.image.link}}-tablet@2x.webp 2x
+          "
+          media="(min-width: 768px)"
+          type="image/webp"
+        />
+        <source
+          srcset="
+            ./assets/images/scratch/{{section.image.link}}-mobile.webp    1x,
+            ./assets/images/scratch/{{section.image.link}}-mobile@2x.webp 2x
+          "
+          media="(max-width: 767px)"
+          type="image/webp"
+        />
+        <source
+          srcset="
+            ./assets/images/scratch/{{section.image.link}}-desktop.png    1x,
+            ./assets/images/scratch/{{section.image.link}}-desktop@2x.png 2x
+          "
+          media="(min-width: 1280px)"
+          type="image/png"
+        />
+        <source
+          srcset="
+            ./assets/images/scratch/{{section.image.link}}-tablet.png    1x,
+            ./assets/images/scratch/{{section.image.link}}-tablet@2x.png 2x
+          "
+          media="(min-width: 768px)"
+          type="image/png"
+        />
+
+        <img
+          src="./assets/images/scratch/{{section.image.link}}-mobile.png"
+          srcset="./assets/images/scratch/{{section.image.link}}-mobile@2x.png 2x"
+          alt="{{section.image.alt}}"
+          width="370"
+          height="246"
+          loading="lazy"
+        />
+      </picture>
+    </div>
+  </div>
+</section>

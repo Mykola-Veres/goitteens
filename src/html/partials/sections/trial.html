@@ -1,0 +1,28 @@
+{% set section = trial %}
+<section class="{{section.id}} section !pt-28 md:!pt-44 xl:!pt-[322px]">
+  <div class="container">
+    <h2
+      class="section-title mb-6 !text-[17px] md:mb-10 md:!text-[32px] xl:mb-8 xl:w-[770px] xl:!text-4xl"
+    >
+      {{section.title}}
+    </h2>
+    <ul
+      class="mb-8 flex md:mb-10 md:gap-x-[52px] xl:w-[969px] xl:gap-x-[30px] smOnly:flex-col smOnly:gap-y-8"
+    >
+      {% for item in section.works%}
+      <li class="paragraph trial-item !text-white md:basis-1/3">{{item}}</li>
+      {% endfor %}
+    </ul>
+    <h3 class="section-subtitle mb-8 !leading-[1.45] md:mb-10 md:w-[568px] xl:mb-[52px]">
+      {{section.description}}
+    </h3>
+
+    <button
+      class="btn scaled-hover smOnly:mx-auto smOnly:block smOnly:w-full smOnly:max-w-[320px]"
+      type="button"
+      data-modal-open
+    >
+      {{section.btn.text}}
+    </button>
+  </div>
+</section>

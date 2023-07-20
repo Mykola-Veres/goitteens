@@ -1,0 +1,111 @@
+.header {
+  background-repeat: no-repeat, repeat-x;
+  background-position: top 5px right -3%, bottom center;
+  background-image: url('../images/hero/boy-mobile.png'), url('../images/hero/bg-mobile.svg');
+  background-size: 114px auto, 340px auto;
+
+  @include mq(retina) {
+    background-image: url('../images/hero/boy-mobile@2x.png'), url('../images/hero/bg-mobile.svg');
+  }
+  @supports (
+    background-image: url('../images/hero/boy-mobile.webp'),
+    url('../images/hero/bg-mobile.svg')
+  ) {
+    background-image: url('../images/hero/boy-mobile.webp'), url('../images/hero/bg-mobile.svg');
+
+    @include mq(retina) {
+      background-image: url('../images/hero/boy-mobile@2x.webp'),
+        url('../images/hero/bg-mobile.svg');
+    }
+  }
+
+  @media (min-width: 480px) and (max-width: 767.98px) {
+    background-position: top 10px right calc(50% - 178px), bottom center;
+  }
+
+  @include mq(tablet) {
+    background-image: url('../images/hero/boy-tablet.png'), url('../images/hero/bg-desktop.svg');
+    background-size: 396px auto, 769px auto;
+    background-position: bottom 136px right calc(50% - 196px), bottom center;
+
+    @include mq(retina) {
+      background-image: url('../images/hero/boy-tablet@2x.png'),
+        url('../images/hero/bg-desktop.svg');
+    }
+    @supports (
+      background-image: url('../images/hero/boy-tablet.webp'),
+      url('../images/hero/bg-desktop.svg')
+    ) {
+      background-image: url('../images/hero/boy-tablet.webp'), url('../images/hero/bg-desktop.svg');
+
+      @include mq(retina) {
+        background-image: url('../images/hero/boy-tablet@2x.webp'),
+          url('../images/hero/bg-desktop.svg');
+      }
+    }
+  }
+
+  @include mq(desktop) {
+    background-image: url('../images/hero/boy-desktop.png'), url('../images/hero/bg-desktop.svg');
+    background-size: 747px auto, 1600px auto;
+    background-position: bottom 190px right calc(50% - 270px), bottom center;
+
+    @include mq(retina) {
+      background-image: url('../images/hero/boy-desktop@2x.png'),
+        url('../images/hero/bg-desktop.svg');
+    }
+    @supports (
+      background-image: url('../images/hero/boy-desktop.webp'),
+      url('../images/hero/bg-desktop.svg')
+    ) {
+      background-image: url('../images/hero/boy-desktop.webp'), url('../images/hero/bg-desktop.svg');
+
+      @include mq(retina) {
+        background-image: url('../images/hero/boy-desktop@2x.webp'),
+          url('../images/hero/bg-desktop.svg');
+      }
+    }
+  }
+}
+
+.header-item {
+  position: relative;
+
+  &::before {
+    content: '';
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+    background-size: contain;
+    position: absolute;
+    width: 27px;
+    height: 23px;
+    left: 0px;
+  }
+
+  &:first-child::before {
+    background-image: url('../images/triangles1.svg');
+    top: 2px;
+  }
+
+  &:nth-child(2)::before {
+    background-image: url('../images/triangles2.svg');
+    top: 0px;
+  }
+  &:nth-child(3)::before {
+    background-image: url('../images/triangles3.svg');
+    top: 4px;
+  }
+
+  @include mq(tablet) {
+    &::before {
+      width: 36px;
+      height: 30px;
+    }
+
+    &:nth-child(2)::before {
+      background-image: url('../images/triangles2.svg');
+      top: -6px;
+    }
+  }
+}

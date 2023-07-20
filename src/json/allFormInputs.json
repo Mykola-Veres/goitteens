@@ -1,0 +1,56 @@
+{
+  "inputs": [
+    {
+      "title": "Імʼя *",
+      "type": "text",
+      "name": "name",
+      "placeholder": "",
+      "dataField": "name",
+      "required": true
+    },
+    {
+      "title": "Телефон *",
+      "type": "tel",
+      "name": "phone",
+      "placeholder": "",
+      "dataField": "phone",
+      "required": true
+    },
+    {
+      "title": "Пошта *",
+      "type": "email",
+      "name": "email",
+      "placeholder": "email@gmail.com",
+      "dataField": "email",
+      "required": true
+    },
+    {
+      "title": "Згоден з ",
+      "type": "checkbox",
+      "name": "agree",
+      "dataField": "checkbox",
+      "required": true,
+      "class": "input-wrap-checkbox",
+      "linkSeparator": "та",
+      "links": [
+        { "text": "Політика конфіденційності", "href": "https://goit.global/ua/privacy-policy/" },
+        { "text": "Умови користування послугами", "href": "https://goit.global/ua/terms-of-use/" }
+      ]
+    },
+    {
+      "title": "CV *",
+      "type": "file",
+      "name": "file",
+      "dataField": "file",
+      "required": true,
+      "accept": ".doc, .docx, .pdf, .rtf"
+    },
+    {
+      "title": "Мотиваційний лист / Сообщение / Вопрос",
+      "type": "textarea",
+      "name": "message",
+      "placeholder": "",
+      "dataField": "message"
+    }
+  ]
+}

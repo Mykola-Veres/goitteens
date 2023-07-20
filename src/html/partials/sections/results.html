@@ -1,0 +1,32 @@
+{% set section = results %}
+<section class="{{section.id}} section results pb-[44px] md:pb-[38px] xl:pb-16 ">
+  <div class="container">
+    <h2 class="section-title mb-8 md:mb-10 xl:mb-[61px] xl:w-[870px]">{{section.title}}</h2>
+
+    <ul
+      class="result-list mb-28 grid grid-cols-1 gap-x-8 gap-y-8 sm:mb-[110px] md:mb-[175px] md:grid-cols-2 xl:mb-[276px] xl:gap-x-[230px] xl:gap-y-12"
+    >
+      {% for item in section.results %}
+      <li
+        class="paragraph result-card rounded-xl bg-white py-[22px] pl-5 pr-3 shadow-grey xl:w-[370px]"
+      >
+        {{item}}
+      </li>
+      {% endfor %}
+    </ul>
+    <div class="xl:pl-[500px] mdOnly:pr-[158px]">
+      <h3 class="section-subtitle mb-6 md:text-[24px] xl:mb-4">{{section.description}}</h3>
+      <p class="paragraph mb-8 leading-[1.3] !text-white md:text-[24px] xl:mb-[52px]">
+        {{section.subscript}}
+      </p>
+
+      <button
+        class="btn scaled-hover smOnly:mx-auto smOnly:block smOnly:w-full smOnly:max-w-[320px]"
+        type="button"
+        data-modal-open
+      >
+        {{section.btn.text}}
+      </button>
+    </div>
+  </div>
+</section>

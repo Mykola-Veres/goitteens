@@ -1,0 +1,50 @@
+{% set section = feedback %}
+<section class="{{section.id}} section !pb-[100px] overflow-hidden">
+  <div class="container">
+    <h2 class="section-title mb-8 md:mb-10 md:w-[500px] xl:w-[870px]">{{section.title}}</h2>
+    <div class="feedback-wrapper mb-6 md:mb-8">
+      <ul class="carousel">
+        {% for item in section.cards %}
+
+        <li
+          class="h-[331px] rounded-xl bg-second px-[30px] py-8 shadow-grey md:!h-[306px] mdOnly:!w-[475px]"
+        >
+          <div class="flex flex-col items-center md:flex-row">
+            <picture>
+              <source
+                srcset="
+                  ./assets/images/feedback/{{item.image.url}}.webp    1x,
+                  ./assets/images/feedback/{{item.image.url}}@2x.webp 2x
+                "
+                type="image/webp"
+              />
+              <source
+                srcset="
+                  ./assets/images/feedback/{{item.image.url}}.png    1x,
+                  ./assets/images/feedback/{{item.image.url}}@2x.png 2x
+                "
+                type="image/png"
+              />
+              <img
+                src="./assets/images/feedback/{{item.image.url}}.png"
+                srcset="./assets/images/feedback/{{item.image.url}}@2x.png 2x"
+                alt="{{item.image.alt}}"
+                width="84"
+                height="84"
+                loading="lazy"
+              />
+            </picture>
+
+            <h3 class="section-subtitle ml-6 !text-[16px] smOnly:mt-[10px]">{{item.name}}</h3>
+            <p class="paragraph !text-blue-dark md:ml-auto smOnly:mt-1">{{item.data}}</p>
+          </div>
+          <p class="paragraph feedback-overflow mt-1 !h-[132px] overflow-auto md:mt-6">
+            {{item.text}}
+          </p>
+        </li>
+
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>

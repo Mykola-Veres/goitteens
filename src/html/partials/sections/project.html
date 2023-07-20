@@ -1,0 +1,93 @@
+{% set section = project %}
+<section class="{{section.id}} section">
+  <div class="container">
+    <h2 class="section-title mb-4 md:mb-6">{{section.title}}</h2>
+    <h3 class="section-subtitle !text-[17px] !leading-[22px] md:w-[470px] smOnly:mb-6">
+      {{section.subtitle}}
+    </h3>
+    <ul class="grid gap-8 md:grid-cols-3 md:gap-[22px] xl:gap-[30px]">
+      {% for item in section.cards %}
+      <li class="project-card rounded-xl px-6 pb-12 pt-6 shadow-grey md:px-4 md:pb-6 xl:px-[26px]">
+        <picture class="mx-auto mb-6 block">
+          <source
+            srcset="
+              ./assets/images/project/{{item.image.url}}-desktop.webp    1x,
+              ./assets/images/project/{{item.image.url}}-desktop@2x.webp 2x
+            "
+            media="(min-width: 1280px)"
+            type="image/webp"
+          />
+          <source
+            srcset="
+              ./assets/images/project/{{item.image.url}}-tablet.webp    1x,
+              ./assets/images/project/{{item.image.url}}-tablet@2x.webp 2x
+            "
+            media="(min-width: 768px)"
+            type="image/webp"
+          />
+          <source
+            srcset="
+              ./assets/images/project/{{item.image.url}}-mobile.webp    1x,
+              ./assets/images/project/{{item.image.url}}-mobile@2x.webp 2x
+            "
+            media="(max-width: 767px)"
+            type="image/webp"
+          />
+          <source
+            srcset="
+              ./assets/images/project/{{item.image.url}}-desktop.png    1x,
+              ./assets/images/project/{{item.image.url}}-desktop@2x.png 2x
+            "
+            media="(min-width: 1280px)"
+            type="image/png"
+          />
+          <source
+            srcset="
+              ./assets/images/project/{{item.image.url}}-tablet.png    1x,
+              ./assets/images/project/{{item.image.url}}-tablet@2x.png 2x
+            "
+            media="(min-width: 768px)"
+            type="image/png"
+          />
+
+          <img
+            class="w-full"
+            src="./assets/images/project/{{item.image.url}}-mobile.png"
+            srcset="./assets/images/project/{{item.image.url}}-mobile@2x.png 2x"
+            alt="{{item.image.alt}}"
+            width="370"
+            height="246"
+            loading="lazy"
+          />
+        </picture>
+        <p
+          class="mb-6 w-[120px] rounded-[4px] border-[1px] border-black-light border-opacity-30 p-2 text-[14px] leading-[13.4px]"
+        >
+          {{section.text}}
+        </p>
+        <p class="mb-4 text-[20px] font-normal leading-[26px] text-[#202020]">
+          {{section.titleDevelopment}}
+        </p>
+        <p class="mb-2 text-[13px] font-bold uppercase leading-[19px] text-black-light">
+          {{section.studentDevelopment}}
+        </p>
+        <ul class="mb-6">
+          {% for item in section.studentList %}
+          <li>
+            <p class="paragraph mdOnly:!text-[14px]">{{item}}</p>
+          </li>
+          {% endfor %}
+        </ul>
+        <a
+          href="{{item.link.url}}"
+          class="btn colored-hover inline-block !px-4 !py-[10px] visited:text-[#800080]"
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+        >
+          {{item.link.text}}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
